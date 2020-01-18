@@ -1,0 +1,23 @@
+For every pair of source_ip and domain , find below values and report it into result_output2 file inside sample-data/output/
+
+        1)  key: "numberDistinctSubDomains"
+            value: For every pair of source_ip and domain, how many distinct sub_domain observed in the request
+
+        2)  key: "totalRequest"
+            value: Num of total request(uid) for every pair of source_ip and domain
+
+        3)  key: "totalTcpRequest"
+            value: For every pair of source_ip and domain, whats the number of Tcp request
+
+        4)  key: "averageSubDomainEntropy"
+            value: For every pair of source_ip and domain, whats the average entropy
+
+        result_2: // Json output For every pair of source ip and domain
+        {
+            "source_ip":"x.x.x.x",  // unique source ip
+            "domain": "xyz", // unique domain
+            "numberDistinctSubDomains": N,
+            "totalRequest": N,
+            "totalTcpRequest": N,
+            "averageSubDomainEntropy": N
+        }

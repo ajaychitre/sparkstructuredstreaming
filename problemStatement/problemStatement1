@@ -1,0 +1,20 @@
+ problem 1:
+
+ For every user id, find below values and report it into result_output1 file inside sample-data/output/
+
+        1)  key: "numberDistinctSubDomain"
+            value: For every distinct user(uid), how many distinct sub domains have been used in a day
+
+        2)  key: "averageSubDomainEntropy"
+            value: For every distinct user(uid), what is the average sub domains entropy of the day
+
+        3)  key: "totalUdpRequest"
+            value: For every distinct uid, how many udp requests made
+
+            result_1: // Json output For every uid
+            {
+                "uid":"xyz", // unique uid
+                "numberDistinctSubDomain": N, // total number of distinct sub domain found for this UID
+                "totalUdpRequest": N, // total number of udp request for this UID
+                "averageSubDomainEntropy": N, // Average Sub domain entropy for this sub domain
+            }
