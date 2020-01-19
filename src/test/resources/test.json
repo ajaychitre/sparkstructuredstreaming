@@ -1,0 +1,11 @@
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.52","destination_ip":"10.35.138.15","protocol":"udp","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 3}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.51","destination_ip":"10.35.138.15","protocol":"tcp","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 3}
+{"uid":"CFroyW1gkfoVUr4dEh","source_ip":"10.51.156.51","destination_ip":"10.35.138.15","protocol":"udp","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 5}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.51","destination_ip":"10.35.138.15","protocol":"tls","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 3}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.52","destination_ip":"10.35.138.15","protocol":"tls","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 5}
+{"uid":"CFroyW1gkfoVUr4dEh","source_ip":"10.61.156.31","destination_ip":"10.35.138.15","protocol":"udp","domain": "msft.webex.com","sub_domain": "teams.webex.com", "sub_domain_entropy": 5}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.65.126.51","destination_ip":"10.35.138.15","protocol":"udp","domain": "webex.com","sub_domain": "teams.webex.com", "sub_domain_entropy": 7}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.51","destination_ip":"10.35.138.15","protocol":"tcp","domain": "webex.com","sub_domain": "meetings.webex.com", "sub_domain_entropy": 7}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.156.51","destination_ip":"10.35.138.15","protocol":"tls","domain": "example.com","sub_domain": "teams.webex.com", "sub_domain_entropy": 5}
+{"uid":"CFroyW1gkfoVUrbdEh","source_ip":"10.61.256.52","destination_ip":"10.35.138.15","protocol":"tls","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 5}
+{"uid":"CFroyW1gkfoVUr4dEh","source_ip":"10.61.156.51","destination_ip":"10.35.138.15","protocol":"tcp","domain": "example.com","sub_domain": "teams.example.com", "sub_domain_entropy": 3}

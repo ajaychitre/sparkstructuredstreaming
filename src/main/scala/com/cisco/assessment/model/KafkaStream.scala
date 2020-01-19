@@ -1,16 +1,19 @@
 package com.cisco.assessment.model
 
-import com.cisco.assessment.utils.Config
+import com.cisco.assessment.utils.{Config, DataSchema}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.streaming.StreamingQuery
-import org.apache.spark.sql.types.StringType
+import org.apache.spark.sql.types.{StringType, StructType}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
+/**
+  * Please note that I am reading from the input file and writing to a Kafka topic because the instructions said we
+  * can do it either way.
+  */
 object KafkaStream {
 
   // sample logic to read streams from kafka
   def readKafkaStream(sparkSession: SparkSession, configProperties: Config): DataFrame = {
-
     sparkSession.readStream
       .format("kafka")
       .option("kafka.bootstrap.servers", configProperties.bootstrapServer)
@@ -18,7 +21,9 @@ object KafkaStream {
       .option("subscribe", configProperties.inputTopic)
       .option("failOnDataLoss", configProperties.failOnDataLoss)
       .option("maxOffsetsPerTrigger", configProperties.maxOffsetsPerTrigger)
-      .load()
+      .format("json")
+      .schema(DataSchema.uidSchema)
+      .load("sample-data/input")
   }
 
   // sample logic to write stream result to kafka

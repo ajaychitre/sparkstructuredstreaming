@@ -22,21 +22,22 @@ object Main extends SparkLogging {
       .setAppName(conf.appName)
       .set("spark.sql.broadcastTimeout", conf.sqlBroadcastTimeout)
       .set("spark.sql.shuffle.partitions", conf.shufflePartitions)
+//      .setMaster("local[*]")
     val spark = SparkSession.builder
       .config(sparkConf)
       .getOrCreate()
 
     // Reading event stream from kafka source
-    //val streamingLogDfs = KafkaStream.readKafkaStream(spark, conf)
+    val streamingLogDfs = KafkaStream.readKafkaStream(spark, conf)
 
     // parsing input data frame and aggregation logic
-    // val analyzedDf = StreamingAnalysis.analyzeAggregatedDF(spark, streamingLogDfs, conf)
+    val analyzedDf = StreamingAnalysis.analyzeAggregatedDF(spark, streamingLogDfs, conf)
 
     // writing event stream to sink kafka
-    //KafkaStream.writeStreamToKafka(spark, analyzedDf, conf)
+    KafkaStream.writeStreamToKafka(spark, analyzedDf, conf)
 
     // Implementation for managing stream queries
-    //RtStreamingQueryManager.manageStreamingQueries(spark, "StopRealTimeCallAnalysis", "RestartRealTimeCallAnalysis", startSparkStreaming)
+    RtStreamingQueryManager.manageStreamingQueries(spark, "StopRealTimeCallAnalysis", "RestartRealTimeCallAnalysis", startSparkStreaming)
   }
 
 }
