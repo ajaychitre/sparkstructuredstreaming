@@ -51,7 +51,7 @@ class StreamingAnalysisTest extends FlatSpec with Matchers with BeforeAndAfterAl
     val row = analyzedDf.filter(col("uid") === "CFroyW1gkfoVUrbdEh").first()
     assert(row.get(1) === 3)
     assert(row.get(2) === 4.75)
-    assert(row.get(3) === 8)
+    assert(row.get(3) === 2)
 
     analyzedDf.show
 

@@ -13,7 +13,9 @@ object StreamingAnalysis {
       df.groupBy(col("uid")).agg(
         approx_count_distinct(col("sub_domain")).alias("numberDistinctSubDomain"),
         avg(col("sub_domain_entropy")).alias("averageSubDomainEntropy"),
-        count(col("uid")).alias("totalUdpRequest")
+        sum(when(col("protocol") === "udp", 1)
+          .when(col("protocol").notEqual("udp"), 0))
+          .alias("totalUdpRequest")
       )
     } else {
       df.groupBy(col("source_ip"), col("domain")).agg(
